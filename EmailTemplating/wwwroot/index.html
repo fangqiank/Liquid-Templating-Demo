@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        const createTemplate = (template) => fetch('/create-template', {
+            method: 'post',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                template
+            })
+        }) 
+
+        const createGeneric = (bag) => fetch('/create-generic', {
+            method: 'post',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                bag
+            })
+        })
+
+        const createConfig = (type, templateId ) => fetch('/create-config', {
+            method: 'post',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                type,
+                templateId
+            })
+        })
+    </script>
+</body>
+</html>
